@@ -4,11 +4,12 @@ import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import reducers from "../reducers";
 
-interface IParam {
+interface IProps {
   children: React.ReactNode;
-  initialState?: {};
+  initialState: { comments: string[] } | {};
 }
-export default ({ children, initialState = {} }: IParam) => {
+export default (props: IProps) => {
+  const { children, initialState } = props;
   const middleware = [thunk];
   const store = createStore(
     reducers,

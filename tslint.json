@@ -1,7 +1,9 @@
 {
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules": {
-    "no-console": false //Disable for typescript
+    "no-console": false, //Disable for typescript
+    "ordered-imports": [false],
+    "object-literal-sort-keys": [false]
   },
   "jsRules": {
     "no-console": false //Disable for typescript

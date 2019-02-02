@@ -4,7 +4,7 @@ import App from "./components/App";
 import Root from "./components/Root";
 
 ReactDOM.render(
-  <Root>
+  <Root initialState={{}}>
     <App />
   </Root>,
   document.getElementById("root") as HTMLElement
