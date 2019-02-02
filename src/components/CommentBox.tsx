@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import * as actions from "./actions";
+import * as actions from "../actions";
 // TODO: when passing function as a prop, you need to define the interface for props.
 interface ICommentBoxProps {
   fetchComment: React.MouseEventHandler<HTMLButtonElement>;
