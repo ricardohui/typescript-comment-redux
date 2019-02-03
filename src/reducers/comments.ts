@@ -8,17 +8,25 @@ export interface IComment {
   email: string;
   body: string;
 }
-
+interface IData {
+  data: IComment[];
+}
 export default function(
   state = [],
-  action: IPayloadedAction<string, { data: IComment[] }>
+  action: IPayloadedAction<string, IData | string>
 ) {
   switch (action.type) {
     case FETCH_COMMENTS:
       console.log(action.payload);
-      const comments = action.payload.data.map(comment => comment.name);
-
+      if (!action.payload) {
+        return state;
+      }
+      const payload: IData = action.payload as IData;
+      const comments = payload.data.map(
+        (comment: { name: any }) => comment.name
+      );
       return [...state, ...comments];
+
     case SAVE_COMMENT:
       return [...state, action.payload];
     default:

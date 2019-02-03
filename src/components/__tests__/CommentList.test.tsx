@@ -1,5 +1,5 @@
-import * as React from "react";
 import { mount, ReactWrapper } from "enzyme";
+import * as React from "react";
 import CommentList from "../CommentList";
 import Root from "../Root";
 
